@@ -1,0 +1,94 @@
+<div class="button-row">
+  <a mat-raised-button color="primary" [routerLink]="['/apartamentos']"><mat-icon>list</mat-icon></a>
+</div>
+<form [formGroup]="apartamentoForm" (ngSubmit)="onFormSubmit(apartamentoForm.value)">    
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Quartos" formControlName="quartos"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!apartamentoForm.get('quartos').valid && apartamentoForm.get('quartos').touched">Quantidade de Quartos</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Suites" formControlName="suites"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!apartamentoForm.get('suites').valid && apartamentoForm.get('suites').touched">Quantidade de Suítes</span>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Sala_estar" formControlName="sala_estar"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!apartamentoForm.get('sala_estar').valid && apartamentoForm.get('sala_estar').touched">Quantidade de Salas de Estar</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Sala_jantar" formControlName="sala_jantar"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!apartamentoForm.get('sala_jantar').valid && apartamentoForm.get('sala_jantar').touched">Quantidade de Salas de Jantar</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Vagas" formControlName="vagas"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!apartamentoForm.get('vagas').valid && apartamentoForm.get('vagas').touched">Quantidade de Vagas</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Andar" formControlName="andar"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!apartamentoForm.get('andar').valid && apartamentoForm.get('andar').touched">Andar</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Valor Condomíniio" formControlName="valorcondominio"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!apartamentoForm.get('valorcondominio').valid && apartamentoForm.get('valorcondominio').touched">Valor do Condomínio</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Area" formControlName="area"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!apartamentoForm.get('area').valid && apartamentoForm.get('area').touched">Área</span>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+      <input matInput placeholder="Descricao" formControlName="descricao"
+             [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!apartamentoForm.get('descricao').valid && apartamentoForm.get('descricao').touched">Descrição</span>
+      </mat-error>
+    </mat-form-field>
+
+    <mat-grid-list cols="3" rowHeight="50px">
+        <mat-grid-tile [colspan]="1" [rowspan]="1" >
+            <mat-form-field>
+                <mat-label>Bairro</mat-label>
+                <mat-select formControlName="endereco">
+                  <mat-option  *ngFor="let endereco of enderecos" [value]="endereco">
+                    {{endereco.bairro}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <mat-checkbox formControlName="armario_embutido">Armário Embutido</mat-checkbox>   
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+          <mat-checkbox formControlName="portaria24h">Portaria 24 horas</mat-checkbox>   
+      </mat-grid-tile>
+    </mat-grid-list>
+
+  <div class="button-row">
+    <button type="submit" [disabled]="!apartamentoForm.valid" mat-raised-button color="primary"><mat-icon>save</mat-icon></button>
+  </div>
+</form>

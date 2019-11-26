@@ -42,6 +42,10 @@ export class InicioComponent implements OnInit {
     this.router.navigateByUrl('/casa-create');
   }
 
+  goToAddApartamento() {
+    this.router.navigateByUrl('/apartamento-create');
+  }
+
   ngOnInit() {
   }
 }

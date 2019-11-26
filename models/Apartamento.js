@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 
-
 var ApartamentoSchema = new mongoose.Schema({
   quartos: Number,
   suites: Number,

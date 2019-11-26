@@ -24,6 +24,11 @@ import { CasaCreateComponent } from './casa/casa-create/casa-create.component';
 import { CasaDetailComponent } from './casa/casa-detail/casa-detail.component';
 import { CasaEditComponent } from './casa/casa-edit/casa-edit.component';
 
+import { ApartamentoListComponent } from './apartamento/apartamento-list/apartamento-list.component';
+import { ApartamentoCreateComponent } from './apartamento/apartamento-create/apartamento-create.component';
+import { ApartamentoDetailComponent } from './apartamento/apartamento-detail/apartamento-detail.component';
+import { ApartamentoEditComponent } from './apartamento/apartamento-edit/apartamento-edit.component';
+
 
 import {
   MatInputModule,
@@ -124,7 +129,29 @@ const appRoutes: Routes = [
     path: 'casa-edit/:id',
     component: CasaEditComponent,
     data: { title: 'Edit Casa'  }
+  },
+
+  {
+    path: 'apartamento-create',
+    component: ApartamentoCreateComponent,
+    data: { title: 'Create Apartamento' }
+  },
+  {
+    path: 'apartamentos',
+    component: ApartamentoListComponent,
+    data: { title: 'Apartamento List' }
+  },
+  {
+    path: 'apartamento-details/:id',
+    component: ApartamentoDetailComponent,
+    data: { title: 'Apartamento Details' }
+  },
+  {    
+    path: 'apartamento-edit/:id',
+    component: ApartamentoEditComponent,
+    data: { title: 'Edit Apartamento'  }
   }
+
 ];
 
 @NgModule({
@@ -143,7 +170,11 @@ const appRoutes: Routes = [
     CasaListComponent,
     CasaCreateComponent,
     CasaDetailComponent,
-    CasaEditComponent
+    CasaEditComponent,
+    ApartamentoListComponent,
+    ApartamentoCreateComponent,
+    ApartamentoDetailComponent,
+    ApartamentoEditComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
