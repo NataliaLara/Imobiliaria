@@ -1,0 +1,30 @@
+<div class="button-row">
+  <a mat-raised-button color="primary" [routerLink]="['/casas']"><mat-icon>list</mat-icon></a>
+</div>
+
+<mat-card class="example-card">
+  <mat-card-content>
+    <dl>
+      <dt>Quartos:</dt>
+      <dd>{{casa.quartos}}</dd>
+      <dt>Suítes:</dt>
+      <dd>{{casa.suites}}</dd>
+      <dt>Sala de Estar:</dt>
+      <dd>{{casa.sala_estar}}</dd>
+      <dt>Vagas:</dt>
+      <dd>{{casa.vagas}}</dd>
+      <dt>Área:</dt>
+      <dd>{{casa.area}}</dd>
+      <dt>Armário Embutido:</dt>
+      <dd>{{casa.armario_embutido}}</dd>
+      <dt>Descrição:</dt>
+      <dd>{{casa.descricao}}</dd>
+      <dt>Bairro:</dt>
+      <dd>{{casa.endereco.bairro}}</dd>
+    </dl>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-raised-button color="primary" [routerLink]="['/casa-edit', casa._id]"><mat-icon>edit</mat-icon></a>
+    <a mat-raised-button color="warn" (click)="deleteCasa(casa._id)"><mat-icon>delete</mat-icon></a>
+  </mat-card-actions>
+</mat-card>

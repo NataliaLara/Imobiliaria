@@ -1,0 +1,102 @@
+<div class="button-row">
+  <a mat-raised-button color="primary" [routerLink]="['/casas']"><mat-icon>list</mat-icon></a>
+</div>
+<form [formGroup]="casaForm" (ngSubmit)="onFormSubmit(casaForm.value)">    
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Quartos" formControlName="quartos"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!casaForm.get('quartos').valid && casaForm.get('quartos').touched">Quantidade de Quartos</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Suites" formControlName="suites"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!casaForm.get('suites').valid && casaForm.get('suites').touched">Quantidade de Suítes</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Sala_estar" formControlName="sala_estar"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!casaForm.get('sala_estar').valid && casaForm.get('sala_estar').touched">Quantidade de Salas de Estar</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Vagas" formControlName="vagas"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!casaForm.get('vagas').valid && casaForm.get('vagas').touched">Quantidade de Vagas</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Area" formControlName="area"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!casaForm.get('area').valid && casaForm.get('area').touched">Área</span>
+    </mat-error>
+  </mat-form-field>
+
+  
+<!--
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Amario_embutido" formControlName="armario_embutido"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!casaForm.get('armario_embutido').valid && casaForm.get('armario_embutido').touched">Ármario Embutido</span>
+    </mat-error>
+  </mat-form-field>
+-->
+  <mat-form-field class="example-full-width">
+      <input matInput placeholder="Descricao" formControlName="descricao"
+             [errorStateMatcher]="matcher">
+      <mat-error>
+        <span *ngIf="!casaForm.get('descricao').valid && casaForm.get('descricao').touched">Descrição</span>
+      </mat-error>
+    </mat-form-field>
+<!--
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Endereco" formControlName="endereco" [options]="enderecos" optionLabel="bairro"
+        [errorStateMatcher]="matcher">
+        <mat-error>
+            <span *ngIf="!casaForm.get('endereco').valid && casaForm.get('endereco').touched">Endereço</span>
+          </mat-error>
+    </mat-form-field>
+-->
+      
+    <!--
+    <p-dropdown [options]="enderecos" formControlName="endereco" [(ngModel)]="endereco" optionLabel="bairro"></p-dropdown>
+    -->
+    <mat-grid-list cols="2" rowHeight="50px">
+        <mat-grid-tile [colspan]="1" [rowspan]="1" >
+            <mat-form-field>
+                <mat-label>Bairro</mat-label>
+                <mat-select formControlName="endereco">
+                  <mat-option  *ngFor="let endereco of enderecos" [value]="endereco">
+                    {{endereco.bairro}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <mat-checkbox formControlName="armario_embutido">Armário Embutido</mat-checkbox>   
+        </mat-grid-tile>
+    </mat-grid-list>
+    <!--
+    <h3 class="first">Bairro</h3>
+  <p-listbox [options]="enderecos" formControlName="endereco" [(ngModel)]="endereco" optionLabel="bairro">  </p-listbox>
+-->
+<!--
+  <mat-selection-list >
+      <mat-list-option *ngFor="let endereco of enderecos">
+        {{endereco.bairro}}
+      </mat-list-option>
+    </mat-selection-list>
+    -->
+
+  <div class="button-row">
+    <button type="submit" [disabled]="!casaForm.valid" mat-raised-button color="primary"><mat-icon>save</mat-icon></button>
+  </div>
+</form>

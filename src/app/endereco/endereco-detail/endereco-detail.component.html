@@ -1,0 +1,20 @@
+<div class="button-row">
+  <a mat-raised-button color="primary" [routerLink]="['/enderecos']"><mat-icon>list</mat-icon></a>
+</div>
+<mat-card class="example-card">
+  
+  <mat-card-content>
+    <dl>
+      <dt>Bairro:</dt>
+      <dd>{{endereco.bairro}}</dd>
+      <dt>Cidade:</dt>
+      <dd>{{endereco.cidade}}</dd>
+      <dt>Publisher:</dt>
+      <dd>{{endereco.estado}}</dd>
+    </dl>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-raised-button color="primary" [routerLink]="['/endereco-edit', endereco._id]"><mat-icon>edit</mat-icon></a>
+    <a mat-raised-button color="warn" (click)="deleteEndereco(endereco._id)"><mat-icon>delete</mat-icon></a>
+  </mat-card-actions>
+</mat-card>
