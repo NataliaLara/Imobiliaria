@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChange } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApartamentoService } from '../apartamento.service';
 
@@ -34,6 +34,13 @@ export class ApartamentoDetailComponent implements OnInit {
           console.log(err);
         }
       );
+  }
+
+  getBoolValue(bool:Boolean){
+    if(bool==true){
+      return "Sim"
+    }else
+      return "Não"
   }
 
 }

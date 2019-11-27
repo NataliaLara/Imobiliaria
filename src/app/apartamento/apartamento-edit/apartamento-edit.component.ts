@@ -23,8 +23,12 @@ export class ApartamentoEditComponent implements OnInit {
   armario_embutido:boolean;
   andar:String;
   valorcondominio:Number;
+  valoraluguel:Number;
   portaria24h:Boolean;
   descricao:string;
+  numero:String;
+  rua:String;
+  apto:String;
   endereco:{
     bairro:string,
     cidade:string,
@@ -56,7 +60,11 @@ export class ApartamentoEditComponent implements OnInit {
       'andar' : [null, Validators.required],
       'valorcondominio' : [null, Validators.required],
       'portaria24h' : [null, Validators.required],
-      'endereco' : [null, Validators.required]
+      'endereco' : [null, Validators.required],
+      'valoraluguel' : [null, Validators.required],
+      'rua' : [null, Validators.required],
+      'numero' : [null, Validators.required],
+      'apto' : [null, Validators.required]
     });
   }
 
@@ -75,7 +83,10 @@ export class ApartamentoEditComponent implements OnInit {
         sala_jantar:data.sala_jantar,
         andar:data.andar,
         valorcondominio:data.valorcondominio,
-        portaria24h:data.portaria24h
+        portaria24h:data.portaria24h,
+        valoraluguel:data.valoraluguel,
+        numero:data.numero,
+        rua:data.rua
       });
     });
   }

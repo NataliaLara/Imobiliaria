@@ -5,22 +5,19 @@
 <mat-card class="example-card">
   <mat-card-content>
     <dl>
-      <dt>Quartos:</dt>
-      <dd>{{casa.quartos}}</dd>
-      <dt>Suítes:</dt>
-      <dd>{{casa.suites}}</dd>
-      <dt>Sala de Estar:</dt>
-      <dd>{{casa.sala_estar}}</dd>
-      <dt>Vagas:</dt>
-      <dd>{{casa.vagas}}</dd>
-      <dt>Área:</dt>
-      <dd>{{casa.area}}</dd>
-      <dt>Armário Embutido:</dt>
-      <dd>{{casa.armario_embutido}}</dd>
-      <dt>Descrição:</dt>
+      <dt>Qtd. quartos: {{casa.quartos}}</dt>
+      <dt>Qtd. suítes: {{casa.suites}}</dt>
+      <dt>Qtd. salas de estar: {{casa.sala_estar}}</dt>
+      <dt>Nro de vagas na garagem: {{casa.vagas}}</dt>
+      <dt>Área (em metros quadrados): {{casa.area}}</dt>
+      <dt>Possui armário embutido: {{getBoolValue(casa.armario_embutido)}}</dt>      
+      <dt>Descrição: </dt>
       <dd>{{casa.descricao}}</dd>
-      <dt>Bairro:</dt>
-      <dd>{{casa.endereco.bairro}}</dd>
+      <dt>Endereço Completo:</dt>
+      <dt>{{casa.rua}},{{casa.numero}}</dt>
+      <dt>Bairro: {{casa.endereco.bairro}}</dt>
+      <dt>Cidade: {{casa.endereco.cidade}}-{{casa.endereco.siglaestado}}</dt>
+      <dt>Valor do aluguel: R$ {{casa.valoraluguel}}</dt>
     </dl>
   </mat-card-content>
   <mat-card-actions>

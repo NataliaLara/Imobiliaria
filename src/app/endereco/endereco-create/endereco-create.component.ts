@@ -14,6 +14,7 @@ export class EnderecoCreateComponent implements OnInit {
   bairro:string='';
   cidade:string='';
   estado:string='';
+  siglaestado:string='';
 
   constructor(private router: Router, private enderecoService: EnderecoService, private formBuilder: FormBuilder) { }
 
@@ -21,7 +22,8 @@ export class EnderecoCreateComponent implements OnInit {
     this.enderecoForm = this.formBuilder.group({
       'bairro' : [null, Validators.required],
       'cidade' : [null, Validators.required],
-      'estado' : [null, Validators.required]
+      'estado' : [null, Validators.required],
+      'siglaestado' : [null, Validators.required]
     });
   }
 

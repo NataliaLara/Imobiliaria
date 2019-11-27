@@ -6,30 +6,23 @@
 <mat-card class="example-card">
   <mat-card-content>
     <dl>
-      <dt>Quartos:</dt>
-      <dd>{{apartamento.quartos}}</dd>
-      <dt>Suítes:</dt>
-      <dd>{{apartamento.suites}}</dd>
-      <dt>Sala de Estar:</dt>
-      <dd>{{apartamento.sala_estar}}</dd>
-      <dt>Sala de Jantar:</dt>
-      <dd>{{apartamento.sala_jantar}}</dd>
-      <dt>Vagas:</dt>
-      <dd>{{apartamento.vagas}}</dd>
-      <dt>Área:</dt>
-      <dd>{{apartamento.area}}</dd>
-      <dt>Armário Embutido:</dt>
-      <dd>{{apartamento.armario_embutido}}</dd>
-      <dt>Portaria 24 horas:</dt>
-      <dd>{{apartamento.portaria24h}}</dd>
-      <dt>Descrição:</dt>
+      <dt>Qntd. quartos: {{apartamento.quartos}}</dt>
+      <dt>Qntd. suítes: {{apartamento.suites}}</dt>
+      <dt>Qntd. de salas de Estar: {{apartamento.sala_estar}}</dt>
+      <dt>Qntd. de salas de Jantar: {{apartamento.sala_jantar}}</dt>
+      <dt>Nro de vagas na garagem: {{apartamento.vagas}}</dt>
+      <dt>Área (em metros quadrados): {{apartamento.area}}</dt>
+      <dt>Possui armário embutido: {{getBoolValue(apartamento.armario_embutido)}}</dt>
+      <dt>Descrição: </dt>
       <dd>{{apartamento.descricao}}</dd>
-      <dt>Andar:</dt>
-      <dd>{{apartamento.andar}}</dd>
-      <dt>Valor do condomínio:</dt>
-      <dd>{{apartamento.valorcondominio}}</dd>
-      <dt>Bairro:</dt>
-      <dd>{{apartamento.endereco.bairro}}</dd>
+      <dt>Andar: {{apartamento.andar}} andar (Apto {{apartamento.apto}})</dt>
+      <dt>Valor do condomínio: R$ {{apartamento.valorcondominio}}</dt>
+      <dt>Portaria 24 horas: {{getBoolValue(apartamento.portaria24h)}}</dt>
+
+      <dt>Endereço Completo: {{apartamento.rua}},{{apartamento.numero}}</dt>
+      <dt>Bairro: {{apartamento.endereco.bairro}}</dt>
+      <dt>Cidade: {{apartamento.endereco.cidade}}-{{apartamento.endereco.siglaestado}}</dt>
+      <dt>Valor do aluguel: R$ {{apartamento.valoraluguel}}</dt>
     </dl>
   </mat-card-content>
   <mat-card-actions>

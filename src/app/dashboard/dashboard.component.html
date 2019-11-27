@@ -6,6 +6,8 @@
     [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'"
     [opened]="!(isHandset$ | async)">
+    
+    
     <mat-toolbar color="primary">Menu</mat-toolbar>
    
     <mat-nav-list>
@@ -13,12 +15,14 @@
       <a mat-list-item routerLink="/matiere">Matiere</a>
       <a mat-list-item href="/second-page">Link 2</a>
       <a mat-list-item href="#">Link 3</a>
-      <a mat-list-item href="/pessoa">Pessoa</a>
-      -->
+      <a mat-list-item href="/pessoa">Pessoa</a>      
       <a mat-list-item routerLink="/books">Livros</a>
+      -->
+      <mat-icon  mat-list-item  routerLink="/inicio" aria-hidden="false" aria-label="Example home icon">home</mat-icon>
       <a mat-list-item routerLink="/casas">Casas</a>
       <a mat-list-item routerLink="/enderecos">Endereços</a>
       <a mat-list-item routerLink="/apartamentos">Apartamentos</a>
+
     </mat-nav-list>    
     <!--
     <mat-nav-list>
@@ -35,8 +39,11 @@
         (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+
       </button>
       <span>Imobiliária</span>
+
+
     </mat-toolbar>
     <!-- Add Content Here -->
     <router-outlet></router-outlet>

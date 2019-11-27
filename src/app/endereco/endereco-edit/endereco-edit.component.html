@@ -25,6 +25,13 @@
       <span *ngIf="!enderecoForm.get('estado').valid && enderecoForm.get('estado').touched">Please enter Endereco Author</span>
     </mat-error>
   </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Sigla Estado" formControlName="siglaestado"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!enderecoForm.get('siglaestado').valid && enderecoForm.get('siglaestado').touched">Please enter Endereco Author</span>
+    </mat-error>
+  </mat-form-field>
 
   
   <div class="button-row">

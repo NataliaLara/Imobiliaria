@@ -38,12 +38,39 @@
           </mat-error>
         </mat-form-field>
         <mat-form-field class="example-full-width">
+          <input matInput placeholder="Valor do aluguel" formControlName="valoraluguel"
+                 [errorStateMatcher]="matcher">
+          <mat-error>
+            <span *ngIf="!casaForm.get('valoraluguel').valid && casaForm.get('valoraluguel').touched">Valor do Aluguel</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
             <input matInput placeholder="Descricao" formControlName="descricao"
                    [errorStateMatcher]="matcher">
             <mat-error>
               <span *ngIf="!casaForm.get('descricao').valid && casaForm.get('descricao').touched">Descrição</span>
             </mat-error>
           </mat-form-field>
+          <mat-grid-list cols="2" rowHeight="100px">
+              <mat-grid-tile [colspan]="1" [rowspan]="1" >
+                  <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Rua" formControlName="rua"
+                             [errorStateMatcher]="matcher">
+                      <mat-error>
+                        <span *ngIf="!casaForm.get('rua').valid && casaForm.get('rua').touched">Rua</span>
+                      </mat-error>
+                    </mat-form-field>
+              </mat-grid-tile>
+              <mat-grid-tile [colspan]="1" [rowspan]="1" >
+                  <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Número" formControlName="numero"
+                             [errorStateMatcher]="matcher">
+                      <mat-error>
+                        <span *ngIf="!casaForm.get('numero').valid && casaForm.get('numero').touched">Número</span>
+                      </mat-error>
+                    </mat-form-field>
+              </mat-grid-tile>
+          </mat-grid-list>
           <mat-grid-list cols="2" rowHeight="50px">
             <mat-grid-tile [colspan]="1" [rowspan]="1" >
                 <mat-form-field>
@@ -51,6 +78,8 @@
                     <mat-select formControlName="endereco">
                       <mat-option  *ngFor="let endereco of enderecos" [value]="endereco">
                         {{endereco.bairro}}
+                        -
+                        {{endereco.cidade}}      
                       </mat-option>
                     </mat-select>
                   </mat-form-field>

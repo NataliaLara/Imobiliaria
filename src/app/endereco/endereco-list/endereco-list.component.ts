@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 export class EnderecoListComponent implements OnInit {
 
   enderecos: any;
-  displayedColumns = ['bairro', 'cidade', 'estado'];
+  displayedColumns = ['bairro', 'cidade', 'estado','siglaestado'];
   dataSource = new EnderecoDataSource(this.apiService);
 
   constructor(private apiService: EnderecoService ) { }

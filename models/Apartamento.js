@@ -7,15 +7,20 @@ var ApartamentoSchema = new mongoose.Schema({
   sala_jantar:Number,
   vagas:Number,
   area:Number,
-  armario_embutido:Boolean,
+  armario_embutido:{type: Boolean, default: false},
   descricao:String,
   andar:String,
   valorcondominio:Number,
-  portaria24h:Boolean,
+  valoraluguel:Number,
+  portaria24h:{type: Boolean, default: false},
+  apto:String,
+  rua:String,
+  numero:String,
   endereco:{
     bairro:String,
-    cidade:String,
-    estado:String,
+    cidade: { type: String, default: 'Belo Horizonte' },
+    estado: { type: String, default: 'Minas Gerais' },
+    siglaestado: { type: String, default: 'MG' },
   }
 });
 

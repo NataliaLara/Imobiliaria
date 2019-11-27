@@ -2,8 +2,9 @@ var mongoose = require('mongoose');
 
 var EnderecoSchema = new mongoose.Schema({
   bairro: String,
-  cidade: String,
-  estado: String,
+  cidade: { type: String, default: 'Belo Horizonte' },
+  estado: { type: String, default: 'Minas Gerais' },
+  siglaestado: { type: String, default: 'MG' },
   //updated_date: { type: Date, default: Date.now },
 });
 

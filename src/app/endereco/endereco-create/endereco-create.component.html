@@ -7,7 +7,7 @@
     <input matInput placeholder="Bairro" formControlName="bairro"
            [errorStateMatcher]="matcher">
     <mat-error>
-      <span *ngIf="!enderecoForm.get('bairro').valid && enderecoForm.get('bairro').touched">Please enter Bairro</span>
+      <span *ngIf="!enderecoForm.get('bairro').valid && enderecoForm.get('bairro').touched">Bairro</span>
     </mat-error>
   </mat-form-field>
 
@@ -15,7 +15,7 @@
     <input matInput placeholder="Cidade" formControlName="cidade"
            [errorStateMatcher]="matcher">
     <mat-error>
-      <span *ngIf="!enderecoForm.get('cidade').valid && enderecoForm.get('cidade').touched">Please enter Cidade</span>
+      <span *ngIf="!enderecoForm.get('cidade').valid && enderecoForm.get('cidade').touched">Cidade</span>
     </mat-error>
   </mat-form-field>
 
@@ -23,10 +23,17 @@
     <input matInput placeholder="Estado" formControlName="estado"
            [errorStateMatcher]="matcher">
     <mat-error>
-      <span *ngIf="!enderecoForm.get('estado').valid && enderecoForm.get('estado').touched">Please enter Book Author</span>
+      <span *ngIf="!enderecoForm.get('estado').valid && enderecoForm.get('estado').touched">Estado</span>
     </mat-error>
   </mat-form-field>
 
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Sigla Estado" formControlName="siglaestado"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!enderecoForm.get('siglaestado').valid && enderecoForm.get('siglaestado').touched">Sigla do Estado</span>
+    </mat-error>
+  </mat-form-field>
   
   <div class="button-row">
     <button type="submit" [disabled]="!enderecoForm.valid" mat-raised-button color="primary"><mat-icon>save</mat-icon></button>

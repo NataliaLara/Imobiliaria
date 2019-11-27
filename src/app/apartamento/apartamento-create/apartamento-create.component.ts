@@ -28,7 +28,11 @@ export class ApartamentoCreateComponent implements OnInit {
   descricao:String;
   andar:String;
   valorcondominio:Number;
+  valoraluguel:Number;
   portaria24h:Boolean;
+  rua:String;
+  numero:String;
+  apto:String;
   endereco:{
     bairro:String,
     cidade:String,
@@ -57,12 +61,16 @@ export class ApartamentoCreateComponent implements OnInit {
       'sala_jantar' : [null, Validators.required],
       'vagas' : [null, Validators.required],
       'area' : [null, Validators.required],
-      'armario_embutido' : [null, Validators.required],
+      'armario_embutido' : [null, Validators],
       'descricao' : [null, Validators.required],
       'andar' : [null, Validators.required],
       'valorcondominio' : [null, Validators.required],
-      'portaria24h' : [null, Validators.required],
-      'endereco' : [null, Validators.required]
+      'portaria24h' : [null, Validators],
+      'endereco' : [null, Validators.required],
+      'valoraluguel' : [null, Validators.required],
+      'numero' : [null, Validators.required],
+      'rua' : [null, Validators.required],
+      'apto' : [null, Validators.required]
     });
     
   }

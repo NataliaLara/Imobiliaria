@@ -46,6 +46,7 @@ import {
   MatGridListModule,  
   MatMenuModule} from "@angular/material";
 
+import {MatRadioModule} from '@angular/material/radio';  
 import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatListModule} from '@angular/material/list';
@@ -53,6 +54,7 @@ import {ListboxModule} from 'primeng/listbox';
 import {DropdownModule} from 'primeng/dropdown';
 import {ButtonModule} from 'primeng/button';
 import {AccordionModule} from 'primeng/accordion'; 
+
 
 
 
@@ -203,7 +205,8 @@ const appRoutes: Routes = [
     ButtonModule,
     AccordionModule,
     MatCheckboxModule,
-    MatSelectModule
+    MatSelectModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

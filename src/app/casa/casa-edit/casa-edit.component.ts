@@ -20,7 +20,10 @@ export class CasaEditComponent implements OnInit {
   vagas:number;
   area:number;
   armario_embutido:boolean;
+  valoraluguel:Number;
   descricao:string;
+  rua:String;
+  numero:String;
   endereco:{
     bairro:string,
     cidade:string,
@@ -48,7 +51,10 @@ export class CasaEditComponent implements OnInit {
       'area' : [null, Validators.required],
       'armario_embutido' : [null, Validators.required],
       'descricao' : [null, Validators.required],
-      'endereco' : [null, Validators.required]
+      'endereco' : [null, Validators.required],
+      'valoraluguel' : [null, Validators.required],
+      'numero' : [null, Validators.required],
+      'rua' : [null, Validators.required]
     });
   }
 
@@ -63,7 +69,8 @@ export class CasaEditComponent implements OnInit {
         area:data.area,
         armario_embutido:data.armario_embutido,
         descricao:data.descricao,
-        endereco:data.endereco
+        endereco:data.endereco,
+        valoraluguel:data.valoraluguel
       });
     });
   }

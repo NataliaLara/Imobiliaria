@@ -30,6 +30,11 @@
       <td mat-cell *matCellDef="let element"> {{element.vagas}} </td>
     </ng-container>   
 
+    <ng-container matColumnDef="valoraluguel">
+      <th mat-header-cell *matHeaderCellDef> Valor aluguel </th>
+      <td mat-cell *matCellDef="let element"> {{element.valoraluguel}} </td>
+    </ng-container>   
+
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/casa-details/', row._id]"></tr>
   </table>

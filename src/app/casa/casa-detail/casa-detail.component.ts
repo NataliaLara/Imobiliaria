@@ -36,4 +36,11 @@ export class CasaDetailComponent implements OnInit {
       );
   }
 
+  getBoolValue(bool:Boolean){
+    if(bool==true){
+      return "Sim"
+    }else
+      return "Não"
+  }
+
 }

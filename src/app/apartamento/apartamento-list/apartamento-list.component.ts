@@ -12,7 +12,7 @@ export class ApartamentoListComponent implements OnInit {
 
 
   apartamentos: any;
-  displayedColumns = ['quartos', 'suites', 'vagas','bairro'];
+  displayedColumns = ['quartos', 'suites', 'vagas','bairro','valoraluguel','valorcondominio'];
   dataSource = new ApartamentoDataSource(this.apartamentoService);
 
   constructor(private apartamentoService: ApartamentoService) { }

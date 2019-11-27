@@ -39,13 +39,26 @@
       <span *ngIf="!apartamentoForm.get('vagas').valid && apartamentoForm.get('vagas').touched">Quantidade de Vagas</span>
     </mat-error>
   </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Andar" formControlName="andar"
-           [errorStateMatcher]="matcher">
-    <mat-error>
-      <span *ngIf="!apartamentoForm.get('andar').valid && apartamentoForm.get('andar').touched">Andar</span>
-    </mat-error>
-  </mat-form-field>
+  <mat-grid-list cols="2" rowHeight="100px">
+      <mat-grid-tile [colspan]="1" [rowspan]="1" >
+          <mat-form-field class="example-full-width">
+              <input matInput placeholder="Andar" formControlName="andar"
+                     [errorStateMatcher]="matcher">
+              <mat-error>
+                <span *ngIf="!apartamentoForm.get('andar').valid && apartamentoForm.get('andar').touched">Andar</span>
+              </mat-error>
+            </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile [colspan]="1" [rowspan]="1" >
+          <mat-form-field class="example-full-width">
+              <input matInput placeholder="Apto" formControlName="apto"
+                     [errorStateMatcher]="matcher">
+              <mat-error>
+                <span *ngIf="!apartamentoForm.get('apto').valid && apartamentoForm.get('apto').touched">Apto</span>
+              </mat-error>
+            </mat-form-field>
+      </mat-grid-tile>
+  </mat-grid-list>
   <mat-form-field class="example-full-width">
     <input matInput placeholder="Valor Condomíniio" formControlName="valorcondominio"
            [errorStateMatcher]="matcher">
@@ -57,7 +70,14 @@
     <input matInput placeholder="Area" formControlName="area"
            [errorStateMatcher]="matcher">
     <mat-error>
-      <span *ngIf="!apartamentoForm.get('area').valid && apartamentoForm.get('area').touched">Área</span>
+      <span *ngIf="!apartamentoForm.get('area').valid && apartamentoForm.get('area').touched">Área (em metros quadrados)</span>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Valor do imóvel" formControlName="valoraluguel"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!apartamentoForm.get('valoraluguel').valid && apartamentoForm.get('valoraluguel').touched">Valor do aluguel</span>
     </mat-error>
   </mat-form-field>
 
@@ -76,6 +96,8 @@
                 <mat-select formControlName="endereco">
                   <mat-option  *ngFor="let endereco of enderecos" [value]="endereco">
                     {{endereco.bairro}}
+                    -
+                    {{endereco.cidade}}      
                   </mat-option>
                 </mat-select>
               </mat-form-field>

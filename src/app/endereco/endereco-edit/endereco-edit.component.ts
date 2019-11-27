@@ -15,6 +15,7 @@ export class EnderecoEditComponent implements OnInit {
   bairro:string = '';
   cidade:string = '';
   estado:string = '';
+  siglaestado:string = '';
 
   constructor(private router: Router, private route: ActivatedRoute, 
     private enderecoService: EnderecoService, private formBuilder: FormBuilder) { }
@@ -24,7 +25,8 @@ export class EnderecoEditComponent implements OnInit {
     this.enderecoForm = this.formBuilder.group({
       'bairro' : [null, Validators.required],
       'cidade' : [null, Validators.required],
-      'estado' : [null, Validators.required]
+      'estado' : [null, Validators.required],
+      'siglaestado' : [null, Validators.required]
     });
   }
 
@@ -34,7 +36,8 @@ export class EnderecoEditComponent implements OnInit {
       this.enderecoForm.setValue({
         bairro: data.bairro,
         cidade: data.cidade,
-        estado: data.estado
+        estado: data.estado,
+        siglaestado: data.siglaestado
       });
     });
   }

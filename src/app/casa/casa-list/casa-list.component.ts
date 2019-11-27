@@ -12,7 +12,7 @@ export class CasaListComponent implements OnInit {
 
 
   casas: any;
-  displayedColumns = ['quartos', 'suites', 'vagas','bairro'];
+  displayedColumns = ['quartos', 'suites', 'vagas','bairro','valoraluguel'];
   dataSource = new CasaDataSource(this.casaService);
 
   constructor(private casaService: CasaService) { }

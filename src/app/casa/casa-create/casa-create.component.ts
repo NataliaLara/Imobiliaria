@@ -19,23 +19,34 @@ export class Page<T> {
   templateUrl: './casa-create.component.html',
   styleUrls: ['./casa-create.component.css']
 })
+
 export class CasaCreateComponent implements OnInit {
+
+  checked = false;
+  indeterminate = false;
+  labelPosition = 'after';
+  disabled = false;
 
   //enderecos:Endereco[];
   enderecos:any;
   casaForm: FormGroup;
+  enableForm: FormGroup;
   quartos: Number;
   suites: Number;
   sala_estar: Number;
   vagas:Number;
   area:Number;
+  valoraluguel:Number;
   armario_embutido:Boolean;
   descrição:String;
+  rua:String;
+  numero:String;
   endereco:{
-    bairo:String,
+    bairro:String,
     cidade:String,
     estado:String,
   }
+
 
   constructor(private router: Router, private casaService: CasaService,
      private formBuilder: FormBuilder,private enderecoService:EnderecoService) { 
@@ -58,31 +69,17 @@ export class CasaCreateComponent implements OnInit {
       'sala_estar' : [null, Validators.required],
       'vagas' : [null, Validators.required],
       'area' : [null, Validators.required],
-      'armario_embutido' : [null, Validators.required],
+      'armario_embutido' : [null, Validators],
       'descricao' : [null, Validators.required],
-      'endereco' : [null, Validators.required]
+      'valoraluguel' : [null, Validators.required],
+      'endereco' : [null, Validators.required],
+      'numero' : [null, Validators.required],
+      'rua' : [null, Validators.required]
     });
+
     
 
   }
-  /*
-  findByNomePais(){
-    this.paisService.findAll(0).subscribe(
-      (dados: Page<Pais>)=>{
-        this.paises = dados.content;
-        console.log("Find Pais", this.paises);
-      }
-    )
-  }
-
-  findByNomeEndereco(){
-    this.enderecoService.getEnderecos().subscribe(
-      (dados: Page<Endereco>)=>{
-        this.enderecos = dados.content;
-        console.log("Find Pais", this.enderecos);
-      }
-    );
-  } */
   findByEndereco(){
   this.enderecoService.getEnderecos()
       .subscribe(res => {
